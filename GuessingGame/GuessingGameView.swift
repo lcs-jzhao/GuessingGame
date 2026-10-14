@@ -38,7 +38,7 @@ struct GuessingGameView: View {
     @State var guess: Int = (lowestNumber + highestNumber) / 2
 
     // How many guesses the player has made in this game.
-    @State var guessCount: Int = 0
+    @State var guessCount: Int = zero
 
     // The message shown to the player, with a symbol and a colour to match it.
     @State var message: String = "I'm thinking of a number from \(lowestNumber) to \(highestNumber)."
