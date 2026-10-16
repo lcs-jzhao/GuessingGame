@@ -38,7 +38,7 @@ struct GuessingGameView: View {
     @State var guess: Int = (lowestNumber + highestNumber) / 2
 
     // How many guesses the player has made in this game.
-    @State var guessCount: Int = zero
+    @State var guessCount: Int = 0
 
     // The message shown to the player, with a symbol and a colour to match it.
     @State var message: String = "I'm thinking of a number from \(lowestNumber) to \(highestNumber)."
@@ -55,7 +55,7 @@ struct GuessingGameView: View {
 
             // The title at the top of the screen.
             HStack {
-                Image(systemName: "sparkle.magnifyingglass")
+                Image(systemName: "dice.fill")
                 Text("Guessing Game")
             }
             .font(.system(size: 120, weight: .bold))
@@ -123,7 +123,10 @@ struct GuessingGameView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
-
+            HStack {
+                Image(systemName: "dice.fill")
+                Text("Guesses so far: \(guessCount)")
+            }
             Text("Guesses so far: \(guessCount)")
                 .font(.headline)
                 .foregroundStyle(Color.secondary)
@@ -197,7 +200,7 @@ struct GuessingGameView: View {
         guess = (lowestNumber + highestNumber) / 2
         guessCount = 0
         message = "I'm thinking of a new number from \(lowestNumber) to \(highestNumber)."
-        messageSymbol = "questionmark.circle.fill"
+        messageSymbol = "hand.thumbsdown.fill"
         messageColor = Color.indigo
         gameIsOver = false
     }
